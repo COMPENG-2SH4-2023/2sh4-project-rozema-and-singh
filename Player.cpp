@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player* playerPtr;
+
 
 Player::Player(GameMechs* thisGMRef)
 {
