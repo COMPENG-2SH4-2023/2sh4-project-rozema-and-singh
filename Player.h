@@ -5,6 +5,7 @@
 #include "objPos.h"
 #include "objPosArrayList.h"
 
+
 class Player
 {
     // Construct the remaining declaration from the project manual.
@@ -14,7 +15,7 @@ class Player
     // You will include more data members and member functions to complete your design.
 
     public:
-        enum Dir {UP, DOWN, LEFT, RIGHT, STOP};  // This is the direction state
+        enum Dir {UP, DOWN, LEFT, RIGHT, STILL};  // This is the direction state
 
         Player(GameMechs* thisGMRef);
         ~Player();
@@ -25,10 +26,10 @@ class Player
 
     private:
         objPos playerPos;   // Upgrade this in iteration 3.       
-        enum Dir myDir;
+        enum Dir movement;
 
         // Need a reference to the Main Game Mechanisms
         GameMechs* mainGameMechsRef;
 };
 
-#endif
+#endif 
