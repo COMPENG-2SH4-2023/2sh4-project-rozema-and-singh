@@ -1,15 +1,13 @@
 #include "Player.h"
 
-
+using namespace std;
 
 Player::Player(GameMechs* thisGMRef)
 {
     mainGameMechsRef = thisGMRef;
     movement = STILL;
 
-    playerPos.x = 10;
-    playerPos.y = 5;
-    playerPos.symbol = '*';
+    playerPos.setObjPos(mainGameMechsRef->getBoardSizeX() / 2, mainGameMechsRef->getBoardSizeY() / 2, '*');
 
     // more actions to be included
 }
@@ -23,12 +21,13 @@ Player::~Player()
 void Player::getPlayerPos(objPos &returnPos)
 {
     // return the reference to the playerPos arrray list
-    returnPos = playerPos;
+    //returnPos = playerPos;-changed
+    returnPos.setObjPos(playerPos.x, playerPos.y, playerPos.symbol);
 }
 
 void Player::updatePlayerDir()
 {
-    using namespace std;
+    
     
     char BTNpressed = mainGameMechsRef -> getInput();
 

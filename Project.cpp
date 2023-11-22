@@ -44,10 +44,9 @@ void Initialize(void)
     MacUILib_init();
     MacUILib_clearScreen();
     
-   pGameMechs = new GameMechs(30, 15);
+    pGameMechs = new GameMechs(30, 15);
 
 
-    //pGameMechs = (GameMechs *)malloc(1 * sizeof(GameMechs));
     pPlayer = new Player(pGameMechs);
 
     
@@ -56,18 +55,18 @@ void Initialize(void)
 
 void GetInput(void)
 {
-   if (MacUILib_hasChar() == 1) {
-    pGameMechs->setInput(MacUILib_getChar());
-   }
+   
+    //Empty
+   
 }
 
 void RunLogic(void)
 {
-    if (pGameMechs->getInput() != 0) {//If there is a new decision
+    
 
     pPlayer->updatePlayerDir();
     pGameMechs->clearInput();//Nulls current input
-    }
+    
 
     pPlayer->movePlayer();
     
@@ -75,29 +74,32 @@ void RunLogic(void)
 
 void DrawScreen(void)
 {
+    objPos tempPos;
+    pPlayer->getPlayerPos(tempPos);
+
     int i,j;
 
     MacUILib_clearScreen();
         for (i = 0; i < pGameMechs->getBoardSizeY(); i++) {
             for (j = 0; j < pGameMechs->getBoardSizeX(); j++) {
                 if ((i == 0) || (i == pGameMechs->getBoardSizeY() - 1)) {//Game board
-                    MacUILib_printf("#");
+                    cout << "#";
                 }
                 else if ((j == 0) || (j == pGameMechs->getBoardSizeX() - 1)){//Game board
-                    MacUILib_printf("#");
+                    cout << "#";
                 }
-               /* else if ((i == pPlayer.) || (j == player.x)) {//Insert Player
-                    MacUILib_printf("%c", player.symbol);
-                }*/// Don't have player position yet
+                else if ((i == tempPos.y) && (j == tempPos.x)) {//Insert Player
+                    MacUILib_printf("%c", tempPos.symbol);
+                }// Don't have player position yet
 
                 else {//If nothing else should be added
-                    MacUILib_printf(" ");
+                    cout << " ";
                 }
 
                 }
             
         
-            MacUILib_printf("\n");
+            cout << endl;
     
     }
 
