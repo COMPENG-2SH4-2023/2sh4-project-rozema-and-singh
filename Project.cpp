@@ -82,6 +82,12 @@ void DrawScreen(void)
     MacUILib_clearScreen();
         for (i = 0; i < pGameMechs->getBoardSizeY(); i++) {
             for (j = 0; j < pGameMechs->getBoardSizeX(); j++) {
+                
+                
+                pGameMechs -> generateFood(tempPos);
+                
+                
+                
                 if ((i == 0) || (i == pGameMechs->getBoardSizeY() - 1)) {//Game board
                     cout << "#";
                 }
