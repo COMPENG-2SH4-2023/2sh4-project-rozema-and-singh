@@ -26,6 +26,8 @@ GameMechs::GameMechs(int boardX, int boardY)
     boardSizeX = boardX;
     boardSizeY = boardY;
 
+    objPos food;
+
 }
 
 // do you need a destructor?, Not now
@@ -74,11 +76,6 @@ void GameMechs::clearInput()
 void GameMechs::generateFood(objPos blockOff)
 {
     int alreadyChosen, candidateX, candidateY;
-
-    
-
-    
-
 
     
         alreadyChosen = 1;

@@ -49,7 +49,9 @@ void Initialize(void)
 
     pPlayer = new Player(pGameMechs);
 
-    
+    objPos tempPos;//Make into a class for above and beyond
+    pPlayer->getPlayerPos(tempPos);
+    pGameMechs->generateFood(tempPos);
     
 }
 
@@ -62,29 +64,25 @@ void GetInput(void)
 
 void RunLogic(void)
 {
-    
-
     pPlayer->updatePlayerDir();
     pGameMechs->clearInput();//Nulls current input
-    
 
+    
     pPlayer->movePlayer();
     
 }
-
 void DrawScreen(void)
 {
     objPos tempPos;
     pPlayer->getPlayerPos(tempPos);
 
+    objPos foodPos;
     int i,j;
+    pGameMechs->getFoodPos(foodPos);
 
     MacUILib_clearScreen();
         for (i = 0; i < pGameMechs->getBoardSizeY(); i++) {
             for (j = 0; j < pGameMechs->getBoardSizeX(); j++) {
-                
-                
-                pGameMechs -> generateFood(tempPos);
                 
                 
                 
@@ -96,7 +94,11 @@ void DrawScreen(void)
                 }
                 else if ((i == tempPos.y) && (j == tempPos.x)) {//Insert Player
                     MacUILib_printf("%c", tempPos.symbol);
-                }// Don't have player position yet
+                }
+
+                else if ((i == foodPos.y) && (j == foodPos.x)) {//Insert Food
+                    MacUILib_printf("%c", foodPos.symbol);
+                }
 
                 else {//If nothing else should be added
                     cout << " ";
