@@ -45,7 +45,7 @@ class GameMechs
         int getBoardSizeX();
         int getBoardSizeY();
 
-        void generateFood(objPos blockOff);
+        void generateFood(objPosArrayList* blockOff);
         void getFoodPos(objPos& returnPos);
       
 

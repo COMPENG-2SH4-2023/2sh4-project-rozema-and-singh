@@ -59,7 +59,7 @@ void Initialize(void)
     snakeList = (pPlayer->getPlayerPos());
 
     (*snakeList).getHeadElement(tempPos);
-    pGameMechs->generateFood(tempPos);
+    pGameMechs->generateFood(snakeList);
     
     //snakeList.insertHead(tempPos);
 
@@ -118,7 +118,7 @@ void DrawScreen(void)
                 if ((i == 0) || (i == pGameMechs->getBoardSizeY() - 1)) {//Game board
                     cout << "#";
                 }
-                else if ((j == 0) || (j == pGameMechs->getBoardSizeX() - 1)){//Game board
+                else if ((j == 0) || (j == pGameMechs->getBoardSizeX() - 1)){//Game board - move to fix border issue
                     cout << "#";
                 }
         
@@ -153,7 +153,7 @@ void DrawScreen(void)
             cout << endl;
     
     }
-
+    cout << "Score: " << (snakeList->getSize() - 1) << endl; 
 }
 
 void LoopDelay(void)

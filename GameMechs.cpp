@@ -14,6 +14,7 @@ GameMechs::GameMechs()
     boardSizeY = 15;
 
     objPos food;
+
 }
 
 GameMechs::GameMechs(int boardX, int boardY)
@@ -73,9 +74,10 @@ void GameMechs::clearInput()
     input = 0;
 }
 
-void GameMechs::generateFood(objPos blockOff)
+void GameMechs::generateFood(objPosArrayList* blockOff)
 {
     int alreadyChosen, candidateX, candidateY;
+    objPos tempPos;
 
     
         alreadyChosen = 1;
@@ -86,14 +88,15 @@ void GameMechs::generateFood(objPos blockOff)
 
             candidateX = (rand() % (getBoardSizeX() - 3)) + 1; // generates a random position for x & y that are in a valid range
             candidateY = (rand() % (getBoardSizeY() -3)) + 1;
-
-
-            if((candidateX == blockOff.x) && (candidateY == blockOff.y)) //checks if chosen position is on the character
-            {
-                alreadyChosen = 1;
+            for (int i = 0; i < blockOff->getSize(); i++){
                 
+                blockOff->getElement(tempPos, i);
+                if((candidateX == tempPos.x) && (candidateY == tempPos.y)) //checks if chosen position is on the character
+                {
+                    alreadyChosen = 1;
+                    
+                }
             }
-            
             if(!alreadyChosen)
             {
                 foodPos.x = candidateX;

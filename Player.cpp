@@ -14,7 +14,7 @@ Player::Player(GameMechs* thisGMRef)
     
     objPos temp;//Local variable
 
-    temp.setObjPos(mainGameMechsRef->getBoardSizeX() / 2, mainGameMechsRef->getBoardSizeY() / 2, '*');
+    temp.setObjPos(mainGameMechsRef->getBoardSizeX() / 2, mainGameMechsRef->getBoardSizeY() / 2, 'O');
     playerPosList->insertHead(temp);
     
     // more actions to be included
@@ -149,6 +149,67 @@ void Player::movePlayer()
     }
 
     playerPosList->insertHead(playerPos);
-    playerPosList->removeTail();    
+    playerPosList->removeTail();
+
+
+    //Iteration 3.2
+    objPos foodPos;
+    //objPos tempPos = playerPos;
+    mainGameMechsRef->getFoodPos(foodPos);
+
+    
+    
+    if ((playerPos.x == foodPos.x) && (playerPos.y == foodPos.y)) {
+         switch(movement) 
+        {
+            case UP: 
+                playerPos.y--;
+                //moveCount++;
+                break;
+                
+            case DOWN:
+                playerPos.y++;
+                //moveCount++;
+                break;
+                
+            case LEFT:
+                playerPos.x--;
+                //moveCount++;
+                break;
+                
+            case RIGHT:
+                playerPos.x++;
+                //moveCount++;
+                break;
+                
+            case STILL:
+                break;
+            }
+    
+    if(playerPos.x >= (mainGameMechsRef -> getBoardSizeX() - 1))
+    {
+        playerPos.x = 1;
+
+    }
+    else if (playerPos.x <= 0)
+    {
+        playerPos.x = (mainGameMechsRef -> getBoardSizeX() - 2);
+
+    }
+    else if(playerPos.y >= (mainGameMechsRef -> getBoardSizeY() - 1))
+    {
+        playerPos.y = 1;
+    }
+    else if(playerPos.y <= 0)
+    {
+        playerPos.y = (mainGameMechsRef -> getBoardSizeY() - 2);
+    }
+        playerPosList->insertHead(playerPos);
+        mainGameMechsRef->generateFood(playerPosList);
+
+    }
+    
+
+
 }
 
