@@ -7,10 +7,11 @@
 using namespace std;
 
 #define DELAY_CONST 100000
-
-
+/*Notes: Currently have a fixed number of snake objects/no collision*/
+//Move changes into player class//
 GameMechs* pGameMechs = NULL;
 Player* pPlayer = NULL;//Localize?
+//objPosArrayList* snakeList = NULL;
 
 void Initialize(void);
 void GetInput(void);
@@ -49,10 +50,24 @@ void Initialize(void)
 
     pPlayer = new Player(pGameMechs);
 
+    objPosArrayList* snakeList;
+    //pPlayer->getPlayerPos(snakeList);
+    
+
     objPos tempPos;//Make into a class for above and beyond
-    pPlayer->getPlayerPos(tempPos);
+
+    snakeList = (pPlayer->getPlayerPos());
+
+    (*snakeList).getHeadElement(tempPos);
     pGameMechs->generateFood(tempPos);
     
+    //snakeList.insertHead(tempPos);
+
+    objPos tempPos2(tempPos.x, tempPos.y-1, tempPos.symbol);
+    (*snakeList).insertTail(tempPos2);
+
+    objPos tempPos3(tempPos2.x, tempPos2.y-1, tempPos2.symbol);
+    (*snakeList).insertTail(tempPos3);
 }
 
 void GetInput(void)
@@ -69,22 +84,36 @@ void RunLogic(void)
 
     
     pPlayer->movePlayer();
+
+    //objPosArrayList snakeList;//Make into a class for above and beyond
+    //objPos tempPos;
+    //pPlayer->getPlayerPos(snakeList);
+        
+
+   /* snakeList.insertHead(tempPos);
+    snakeList->removeTail();*/
     
 }
 void DrawScreen(void)
 {
     objPos tempPos;
-    pPlayer->getPlayerPos(tempPos);
+    objPosArrayList* snakeList;
+    snakeList = (pPlayer->getPlayerPos());
 
     objPos foodPos;
     int i,j;
     pGameMechs->getFoodPos(foodPos);
+    bool body = false;
 
+    objPos TPos;
+    (*snakeList).getHeadElement(TPos);
+
+    objPos bodyPos;
     MacUILib_clearScreen();
         for (i = 0; i < pGameMechs->getBoardSizeY(); i++) {
             for (j = 0; j < pGameMechs->getBoardSizeX(); j++) {
                 
-                
+                body = false;
                 
                 if ((i == 0) || (i == pGameMechs->getBoardSizeY() - 1)) {//Game board
                     cout << "#";
@@ -92,16 +121,30 @@ void DrawScreen(void)
                 else if ((j == 0) || (j == pGameMechs->getBoardSizeX() - 1)){//Game board
                     cout << "#";
                 }
-                else if ((i == tempPos.y) && (j == tempPos.x)) {//Insert Player
-                    MacUILib_printf("%c", tempPos.symbol);
-                }
+        
 
                 else if ((i == foodPos.y) && (j == foodPos.x)) {//Insert Food
                     MacUILib_printf("%c", foodPos.symbol);
                 }
 
+                else if ((i == TPos.y) && (j == TPos.x)) {//Insert Food
+                    MacUILib_printf("%c", TPos.symbol);
+                }
+
                 else {//If nothing else should be added
-                    cout << " ";
+                    for (int l = 0; l < (*snakeList).getSize(); l++){
+                        (*snakeList).getElement(bodyPos, l);
+                        if ((i == bodyPos.y) && (j == bodyPos.x)) {
+                            MacUILib_printf("%c", bodyPos.symbol);
+
+                            body = true;//Caused an issue with the border
+                            //l = snakeList.getSize();
+                        }
+                    }
+                    if (body == false) {
+                        cout << " ";
+                    }
+                    
                 }
 
                 }
@@ -121,10 +164,12 @@ void LoopDelay(void)
 
 void CleanUp(void)
 {
+    
     MacUILib_clearScreen();    
-    delete[] pPlayer;
-    delete[] pGameMechs; 
     MacUILib_uninit();
+
+    delete[] pPlayer;
+    delete[] pGameMechs; //delete list
 }
 /*
 Potential additions for i1 (may be later iterations instead):
