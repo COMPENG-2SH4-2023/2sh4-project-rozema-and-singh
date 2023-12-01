@@ -1,11 +1,13 @@
 #include "Player.h"
+#include "Food.h"
 
 using namespace std;
 
-Player::Player(GameMechs* thisGMRef)
+Player::Player(GameMechs* thisGMRef, Food* pFood)
 {
     mainGameMechsRef = thisGMRef;
     movement = STILL;
+    foodRef = pFood;
 
     //playerPos.setObjPos(mainGameMechsRef->getBoardSizeX() / 2, mainGameMechsRef->getBoardSizeY() / 2, '*');
     
@@ -155,7 +157,7 @@ void Player::movePlayer()
     //Iteration 3.2
     objPos foodPos;
     //objPos tempPos = playerPos;
-    mainGameMechsRef->getFoodPos(foodPos);
+    foodRef->getFoodPos(foodPos);
 
     
     
@@ -205,7 +207,7 @@ void Player::movePlayer()
         playerPos.y = (mainGameMechsRef -> getBoardSizeY() - 2);
     }
         playerPosList->insertHead(playerPos);
-        mainGameMechsRef->generateFood(playerPosList);
+        foodRef->generateFood(playerPosList);
 
     }
     

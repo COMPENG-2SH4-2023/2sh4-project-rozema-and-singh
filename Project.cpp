@@ -3,6 +3,7 @@
 #include "objPos.h"
 #include "Player.h"
 #include "GameMechs.h"
+#include "Food.h"
 
 using namespace std;
 
@@ -11,6 +12,7 @@ using namespace std;
 //Move changes into player class//
 GameMechs* pGameMechs = NULL;
 Player* pPlayer = NULL;//Localize?
+Food* pFood = NULL;
 //objPosArrayList* snakeList = NULL;
 
 void Initialize(void);
@@ -47,8 +49,11 @@ void Initialize(void)
     
     pGameMechs = new GameMechs(30, 15);
 
+    pFood = new Food();
 
-    pPlayer = new Player(pGameMechs);
+    pPlayer = new Player(pGameMechs, pFood);
+
+    
 
     objPosArrayList* snakeList;
     //pPlayer->getPlayerPos(snakeList);
@@ -59,7 +64,7 @@ void Initialize(void)
     snakeList = (pPlayer->getPlayerPos());
 
     (*snakeList).getHeadElement(tempPos);
-    pGameMechs->generateFood(snakeList);
+    pFood->generateFood(snakeList);
     
     //snakeList.insertHead(tempPos);
 
@@ -102,7 +107,7 @@ void DrawScreen(void)
 
     objPos foodPos;
     int i,j;
-    pGameMechs->getFoodPos(foodPos);
+    pFood->getFoodPos(foodPos);
     bool body = false;
 
     objPos TPos;
@@ -170,6 +175,7 @@ void CleanUp(void)
 
     delete[] pPlayer;
     delete[] pGameMechs; //delete list
+    delete[] pFood;
 }
 /*
 Potential additions for i1 (may be later iterations instead):
