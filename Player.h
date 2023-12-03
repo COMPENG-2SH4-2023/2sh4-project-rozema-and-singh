@@ -21,15 +21,20 @@ class Player
 
         Player(GameMechs* thisGMRef, Food* pFood);
         ~Player();
-
+        
         objPosArrayList* getPlayerPos(); // Upgrade this in iteration 3.
         void updatePlayerDir();
         void movePlayer();
-
+        bool checkSelfCollision();
+        int getScore();
     private:
         objPos playerPos;   // Upgrade this in iteration 3.
         objPosArrayList* playerPosList;       
         enum Dir movement;
+
+        //Used for bonus
+        int score;
+        
 
         // Need a reference to the Main Game Mechanisms
         GameMechs* mainGameMechsRef;

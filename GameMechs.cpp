@@ -3,7 +3,7 @@
 #include "Player.h"
 
 
-GameMechs::GameMechs()
+GameMechs::GameMechs()//Dfault constructor
 {
     input = 0;
     exitFlag = false;
@@ -17,7 +17,7 @@ GameMechs::GameMechs()
 
 }
 
-GameMechs::GameMechs(int boardX, int boardY)
+GameMechs::GameMechs(int boardX, int boardY)//Specialized constructor
 {
     input = 0;
     exitFlag = false;
@@ -42,6 +42,7 @@ bool GameMechs::getExitFlagStatus()
 
 char GameMechs::getInput()
 {
+    //Input checking
     if (MacUILib_hasChar() == 1) {
         input = MacUILib_getChar();
    }

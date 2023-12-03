@@ -23,6 +23,7 @@ int objPosArrayList::getSize()
 
 void objPosArrayList::insertHead(objPos thisPos)
 {
+    //Shift every object back
     for (int i = sizeList; i >0; i--){
         aList[i].setObjPos(aList[i-1]);
     }
@@ -43,6 +44,7 @@ void objPosArrayList::insertTail(objPos thisPos)
 
 void objPosArrayList::removeHead()
 {
+    //Shift every object forward
     for (int i = 0; i < sizeList - 1; i++){
         aList[i].setObjPos(aList[i+1]);
     }
