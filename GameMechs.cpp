@@ -31,9 +31,6 @@ GameMechs::GameMechs(int boardX, int boardY)//Specialized constructor
 
 }
 
-// do you need a destructor?, Not now
-
-
 
 bool GameMechs::getExitFlagStatus()
 {

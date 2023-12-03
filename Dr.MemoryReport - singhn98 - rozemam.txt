@@ -1,0 +1,222 @@
+Dr. Memory version 2.6.0 build 0 built on Sep 21 2023 17:48:48
+Windows version: WinVer=105;Rel=2009;Build=22621;Edition=Core
+Dr. Memory results for pid 4552: "Project.exe"
+Application cmdline: "./Project.exe"
+Recorded 124 suppression(s) from default C:\Users\matth\Downloads\DrMemory-Windows-2.6.0\DrMemory-Windows-2.6.0\bin\suppress-default.txt
+
+Error #1: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW             +0x20e    (0x761afc4e <KERNELBASE.dll+0x11fc4e>)
+# 1 KERNELBASE.dll!FindNextFileA             +0x33     (0x762a0514 <KERNELBASE.dll+0x210514>)
+# 2 .text                                     [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 3 __mingw_glob                              [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 4 _setargv                                  [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 5 .text      
+# 6 mainCRTStartup
+# 7 ntdll.dll!RtlInitializeExceptionChain    +0x6a     (0x7796bd2b <ntdll.dll+0x6bd2b>)
+# 8 ntdll.dll!RtlClearBits                   +0xbe     (0x7796bcaf <ntdll.dll+0x6bcaf>)
+Note: @0:00:00.269 in thread 23980
+Note: instruction: cmp    %eax $0x0000001a
+
+Error #2: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW             +0x23b    (0x761afc7b <KERNELBASE.dll+0x11fc7b>)
+# 1 KERNELBASE.dll!FindNextFileA             +0x33     (0x762a0514 <KERNELBASE.dll+0x210514>)
+# 2 .text                                     [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 3 __mingw_glob                              [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 4 _setargv                                  [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 5 .text      
+# 6 mainCRTStartup
+# 7 ntdll.dll!RtlInitializeExceptionChain    +0x6a     (0x7796bd2b <ntdll.dll+0x6bd2b>)
+# 8 ntdll.dll!RtlClearBits                   +0xbe     (0x7796bcaf <ntdll.dll+0x6bcaf>)
+Note: @0:00:00.278 in thread 23980
+Note: instruction: data16 mov    %cx -> 0x00000234(%ebx,%eax,2)
+
+Error #3: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW             +0x167    (0x761afba7 <KERNELBASE.dll+0x11fba7>)
+# 1 KERNELBASE.dll!FindNextFileA             +0x33     (0x762a0514 <KERNELBASE.dll+0x210514>)
+# 2 .text                                     [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 3 __mingw_glob                              [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 4 _setargv                                  [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 5 .text      
+# 6 mainCRTStartup
+# 7 ntdll.dll!RtlInitializeExceptionChain    +0x6a     (0x7796bd2b <ntdll.dll+0x6bd2b>)
+# 8 ntdll.dll!RtlClearBits                   +0xbe     (0x7796bcaf <ntdll.dll+0x6bcaf>)
+Note: @0:00:00.285 in thread 23980
+Note: instruction: test   %eax %eax
+
+Error #4: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW             +0x1ca    (0x761afc0a <KERNELBASE.dll+0x11fc0a>)
+# 1 KERNELBASE.dll!FindNextFileA             +0x33     (0x762a0514 <KERNELBASE.dll+0x210514>)
+# 2 .text                                     [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 3 __mingw_glob                              [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 4 _setargv                                  [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 5 .text      
+# 6 mainCRTStartup
+# 7 ntdll.dll!RtlInitializeExceptionChain    +0x6a     (0x7796bd2b <ntdll.dll+0x6bd2b>)
+# 8 ntdll.dll!RtlClearBits                   +0xbe     (0x7796bcaf <ntdll.dll+0x6bcaf>)
+Note: @0:00:00.287 in thread 23980
+Note: instruction: cmp    %eax $0x00000206
+
+Error #5: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW             +0x1fd    (0x761afc3d <KERNELBASE.dll+0x11fc3d>)
+# 1 KERNELBASE.dll!FindNextFileA             +0x33     (0x762a0514 <KERNELBASE.dll+0x210514>)
+# 2 .text                                     [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 3 __mingw_glob                              [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 4 _setargv                                  [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 5 .text      
+# 6 mainCRTStartup
+# 7 ntdll.dll!RtlInitializeExceptionChain    +0x6a     (0x7796bd2b <ntdll.dll+0x6bd2b>)
+# 8 ntdll.dll!RtlClearBits                   +0xbe     (0x7796bcaf <ntdll.dll+0x6bcaf>)
+Note: @0:00:00.288 in thread 23980
+Note: instruction: data16 mov    %cx -> 0x2c(%ebx,%eax,2)
+
+Error #6: UNINITIALIZED READ: reading 0x013a12d0-0x013a12d4 4 byte(s)
+# 0 KERNELBASE.dll!FindNextFileW             +0x24e    (0x761afc8e <KERNELBASE.dll+0x11fc8e>)
+# 1 KERNELBASE.dll!FindNextFileA             +0x33     (0x762a0514 <KERNELBASE.dll+0x210514>)
+# 2 .text                                     [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 3 __mingw_glob                              [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 4 _setargv                                  [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 5 .text      
+# 6 mainCRTStartup
+# 7 ntdll.dll!RtlInitializeExceptionChain    +0x6a     (0x7796bd2b <ntdll.dll+0x6bd2b>)
+# 8 ntdll.dll!RtlClearBits                   +0xbe     (0x7796bcaf <ntdll.dll+0x6bcaf>)
+Note: @0:00:00.289 in thread 23980
+Note: instruction: test   0x38(%edi) $0x00000400
+
+Error #7: UNINITIALIZED READ: reading register eax
+# 0 .text                                     [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 1 __mingw_readdir                           [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 2 .text                                     [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 3 __mingw_glob                              [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 4 _setargv                                  [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:45]
+# 5 .text      
+# 6 mainCRTStartup
+# 7 ntdll.dll!RtlInitializeExceptionChain    +0x6a     (0x7796bd2b <ntdll.dll+0x6bd2b>)
+# 8 ntdll.dll!RtlClearBits                   +0xbe     (0x7796bcaf <ntdll.dll+0x6bcaf>)
+Note: @0:00:00.290 in thread 23980
+Note: instruction: cmp    %eax $0x00000010
+
+Error #8: UNINITIALIZED READ: reading 0x0062fe3c-0x0062fe40 4 byte(s)
+# 0 msvcrt.dll!_kbhit_nolock
+# 1 msvcrt.dll!_kbhit    
+# 2 MacUILib_hasChar                      [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:27]
+# 3 GameMechs::getInput                   [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/GameMechs.cpp:43]
+# 4 Player::updatePlayerDir               [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Player.cpp:51]
+# 5 RunLogic                              [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:78]
+# 6 main                                  [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:35]
+Note: @0:00:02.251 in thread 23980
+Note: instruction: cmp    (%ebx) $0x00000000
+
+Error #9: UNINITIALIZED READ: reading 0x0062fe54-0x0062fe58 4 byte(s)
+# 0 msvcrt.dll!_getch_nolock
+# 1 msvcrt.dll!_getch    
+# 2 MacUILib_getChar                      [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/MacUILib.c:32]
+# 3 GameMechs::getInput                   [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/GameMechs.cpp:44]
+# 4 Player::updatePlayerDir               [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Player.cpp:51]
+# 5 RunLogic                              [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:78]
+# 6 main                                  [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:35]
+Note: @0:00:02.768 in thread 23980
+Note: instruction: cmp    0xffffffe0(%ebp) $0x00000000
+
+Error #10: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x017b8d6c-0x017b8d70 4 byte(s)
+# 0 _fu12___ZSt4cout               [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:207]
+# 1 main                           [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:40]
+Note: @0:00:04.844 in thread 23980
+Note: next higher malloc: 0x017b8d70-0x017b8d90
+Note: prev lower malloc:  0x017b83f0-0x017b8d50
+Note: instruction: mov    (%edx) -> %edx
+
+Error #11: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x017b8d6c-0x017b8d70 4 byte(s)
+# 0 _fu12___ZSt4cout               [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:207]
+# 1 main                           [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:40]
+Note: @0:00:04.845 in thread 23980
+Note: next higher malloc: 0x017b8d70-0x017b8d90
+Note: prev lower malloc:  0x017b83f0-0x017b8d50
+Note: instruction: mov    (%eax) -> %eax
+
+Error #12: INVALID HEAP ARGUMENT: allocated with operator new, freed with operator delete[]
+# 0 replace_operator_delete_array_nothrow               [D:\a\drmemory\drmemory\common\alloc_replace.c:3002]
+# 1 _fu12___ZSt4cout                                    [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:207]
+# 2 main                                                [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:40]
+Note: @0:00:04.846 in thread 23980
+Note: memory was allocated here:
+Note: # 0 replace_operator_new               [D:\a\drmemory\drmemory\common\alloc_replace.c:2903]
+Note: # 1 Initialize                         [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:57]
+Note: # 2 main                               [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:30]
+
+Error #13: INVALID HEAP ARGUMENT: allocated with operator new, freed with operator delete[]
+# 0 replace_operator_delete_array_nothrow               [D:\a\drmemory\drmemory\common\alloc_replace.c:3002]
+# 1 _fu12___ZSt4cout                                    [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:208]
+# 2 main                                                [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:40]
+Note: @0:00:04.848 in thread 23980
+Note: memory was allocated here:
+Note: # 0 replace_operator_new               [D:\a\drmemory\drmemory\common\alloc_replace.c:2903]
+Note: # 1 Initialize                         [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:51]
+Note: # 2 main                               [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:30]
+
+Error #14: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x017b8394-0x017b8398 4 byte(s)
+# 0 _fu12___ZSt4cout               [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:209]
+# 1 main                           [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:40]
+Note: @0:00:04.849 in thread 23980
+Note: next higher malloc: 0x017b8398-0x017b83a0
+Note: prev lower malloc:  0x017b8170-0x017b8248
+Note: 0x017b8394-0x017b8398 is 32 byte(s) beyond memory 0x017b8358-0x017b8374 that was freed here:
+Note: # 0 replace_operator_delete_array_nothrow               [D:\a\drmemory\drmemory\common\alloc_replace.c:3002]
+Note: # 1 _fu12___ZSt4cout                                    [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:208]
+Note: # 2 main                                                [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:40]
+Note: instruction: mov    (%edx) -> %edx
+
+Error #15: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x017b8394-0x017b8398 4 byte(s)
+# 0 _fu12___ZSt4cout               [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:209]
+# 1 main                           [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:40]
+Note: @0:00:04.851 in thread 23980
+Note: next higher malloc: 0x017b8398-0x017b83a0
+Note: prev lower malloc:  0x017b8170-0x017b8248
+Note: 0x017b8394-0x017b8398 is 32 byte(s) beyond memory 0x017b8358-0x017b8374 that was freed here:
+Note: # 0 replace_operator_delete_array_nothrow               [D:\a\drmemory\drmemory\common\alloc_replace.c:3002]
+Note: # 1 _fu12___ZSt4cout                                    [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:208]
+Note: # 2 main                                                [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:40]
+Note: instruction: mov    (%eax) -> %eax
+
+Error #16: INVALID HEAP ARGUMENT: allocated with operator new, freed with operator delete[]
+# 0 replace_operator_delete_array_nothrow               [D:\a\drmemory\drmemory\common\alloc_replace.c:3002]
+# 1 _fu12___ZSt4cout                                    [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:209]
+# 2 main                                                [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:40]
+Note: @0:00:04.852 in thread 23980
+Note: memory was allocated here:
+Note: # 0 replace_operator_new               [D:\a\drmemory\drmemory\common\alloc_replace.c:2903]
+Note: # 1 Initialize                         [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:54]
+Note: # 2 main                               [C:\COE2SH4\CourseProject\2sh4-project-rozema-and-singh/Project.cpp:30]
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+	Error #   1:     21
+	Error #   2:     21
+	Error #   3:      9
+	Error #   4:      9
+	Error #   5:      9
+	Error #   6:      9
+	Error #   7:      9
+	Error #  12:      2
+	Error #  16:      2
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      4 unique,     4 total unaddressable access(es)
+      9 unique,    89 total uninitialized access(es)
+      3 unique,     5 total invalid heap argument(s)
+      0 unique,     0 total GDI usage error(s)
+      0 unique,     0 total handle leak(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+     20 potential error(s) (suspected false positives)
+         (details: C:\Users\matth\Downloads\DrMemory-Windows-2.6.0\DrMemory-Windows-2.6.0\drmemory\logs\DrMemory-Project.exe.4552.000\potential_errors.txt)
+      1 potential leak(s) (suspected false positives)
+         (details: C:\Users\matth\Downloads\DrMemory-Windows-2.6.0\DrMemory-Windows-2.6.0\drmemory\logs\DrMemory-Project.exe.4552.000\potential_errors.txt)
+     41 unique,    41 total,  12786 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: C:\Users\matth\Downloads\DrMemory-Windows-2.6.0\DrMemory-Windows-2.6.0\drmemory\logs\DrMemory-Project.exe.4552.000\results.txt

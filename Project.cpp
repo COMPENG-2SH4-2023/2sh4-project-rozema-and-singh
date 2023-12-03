@@ -31,7 +31,7 @@ int main(void)
 
     while(pGameMechs->getExitFlagStatus() == false)  
     {
-        GetInput();
+        GetInput(); 
         RunLogic();
         DrawScreen();
         LoopDelay();
@@ -67,7 +67,7 @@ void Initialize(void)
 void GetInput(void)
 {
    
-    //Empty
+    //Inside of GameMechs.cpp
    
 }
 
@@ -111,7 +111,7 @@ void DrawScreen(void)
                 piece_placed = false;
                 
                 //Border display
-                if ((i == 0) || (i == pGameMechs->getBoardSizeY() - 1)) {//
+                if ((i == 0) || (i == pGameMechs->getBoardSizeY() - 1)) {
                     MacUILib_printf("#");
                 }
                 else if ((j == 0) || (j == pGameMechs->getBoardSizeX() - 1)){
